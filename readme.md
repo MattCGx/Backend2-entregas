@@ -4,8 +4,8 @@ Proyecto de API para ecommerce.
 
 
 ## Consignas cumplidas:
- Inicializar servidor en puerto 8080
- Conectar a la base en Mongo Atlas (Archivo .envcopia contiene las variables de entorno para dicha conexión)
+ Inicializar servidor en puerto 5000
+ Conectar a la base en Mongo Atlas 
 
  El servidor responde correctamente a las siguiente solicitudes:
 
@@ -29,7 +29,6 @@ Proyecto de API para ecommerce.
 
 
 ## Aclaraciones:
-- Las vistas de handlebars muestran los productos y su paginación, asi como permite elegir cuantos productos a la vez se pueden visualizar. 
-- Al cliquear en "ver detalle" se muestra una vista de producto unico siguiendo el id del mismo.
-
+- Las vistas de handlebars son remanentes del proyecto final del primer curso. Aun no están las vistas de éste proyecto en particular.
+- El Archivo .envcopia contiene las variables de entorno para la conexion con Mongo Atlas
 
