@@ -8,6 +8,7 @@ import cookieParser from "cookie-parser";
 import { __dirname } from "./utils/path.js";
 import hbs from "./utils/handlebarsHbs.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
+import {initializePassport} from "./config/passport.config.js";
 
 // imp rutas
 import viewsRouter from './routes/views.routes.js';
@@ -31,6 +32,7 @@ app.use(morgan('dev'));
 app.use(cookieParser());
 
 // passport
+initializePassport();
 app.use(passport.initialize());
 
 // rutas

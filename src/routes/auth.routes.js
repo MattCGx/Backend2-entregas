@@ -22,7 +22,7 @@ router.post("/register", async (req, res) => {
       age,
       email,
       password: hashPassword,
-      role,
+      role
     });
     res.status(201).json(user);
   } catch (error) {

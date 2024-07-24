@@ -2,7 +2,8 @@ import passport from "passport";
 import local from "passport-local";
 import jwt from "jsonwebtoken";
 import jwtStrategy from "passport-jwt";
-
+import { comparePassword } from "../utils/hash.js";
+import { userModel } from "../Daos/models/user.model.js";
 const LocalStrategy = local.Strategy;
 
 const initializePassport = () => {
@@ -43,3 +44,4 @@ const initializePassport = () => {
 };
 
 
+export { initializePassport}
