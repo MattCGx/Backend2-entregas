@@ -5,26 +5,22 @@ Proyecto de API para ecommerce.
 
 ## Consignas cumplidas:
  Inicializar servidor en puerto 5000
- Conectar a la base en Mongo Atlas 
+ Conectar a la base en Mongo Atlas
+
+ - El modelo de usuario contiene todos los campos de la consigna 
+ - Al crear un nuevo usuario en la coleccion Users, se genera ademas un nuevo carrito en la coleccion Carts, cuyo id se asigna a la propiedad "cart" del usuario creado.
+ - La contraseña del usuario se hashea utilizando bcrypt. 
 
  El servidor responde correctamente a las siguiente solicitudes:
 
-- GET localhost:8080/api/products  (ver todos los productos, se puede aplicar limit, sort, page, filtrar por title) La respuesta está en el formato indicado por la consigna. Incluyendo los links a las paginas disponibles y la cantidad de paginas. 
+- GET localhost:8080/api/users/ (devuelve todos los usuarios creados)
+- GET localhost:8080/api/users/:id (devuelve un solo usuario buscando por id)
 
-- GET localhost:8080/api/products/:pid (Buscar un producto por id)
-- POST localhost:8080/api/products/  (Crear un producto verificando que se cumplan todos los campos requeridos)
-- PUT localhost:8080/api/products/:pid (Actualizar los datos de un producto - al actualizar se verifica que el ID no se cambie)
-- DELETE localhost:8080/api/products/:pid (Borrar un producto)
+- POST localhost:8080/api/auth/register (permite crear un usuario validando los campos ingresados)
+- POST localhost:8080/api/auth/login (permite iniciar una sesion de usuario con email y password)
+- GET localhost:8080/api/auth/current (valida al usuario con uso de la estrategia de jwt y devuelve datos)
+- 
 
-- GET localhost:8080/api/carts/ (Ver todos los carritos creados)
-- GET localhost:8080/api/carts/:cid (Buscar un carrito por ID)
-- POST localhost:8080/api/carts/ (Crear un carrito nuevo vacio)
-- POST localhost:8080/api/carts/:cid/product/:pid (Añadir un producto a un carrito, verificando si ya está en el mismo o no)
-- PUT localhost:8080/api/carts/:cid (modificar el contenido del carrito)
-- PUT localhost:8080/api/carts/:cid/product/:pid (Modificar la propiedad quantity de un producto dentro de un carrito)
-- DELETE localhost:8080/api/carts/:cid/product/:pid (Eliminar un producto completamente del carrito)
-- DELETE localhost:8080/api/carts/:cid (Vaciar un carrito)
-- DELETE localhost:8080/api/carts/:cid/erase (Borrar completamente un carrito)
 
 
 

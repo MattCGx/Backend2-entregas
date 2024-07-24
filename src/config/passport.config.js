@@ -4,7 +4,11 @@ import jwt from "jsonwebtoken";
 import jwtStrategy from "passport-jwt";
 import { comparePassword } from "../utils/hash.js";
 import { userModel } from "../Daos/models/user.model.js";
+
+
 const LocalStrategy = local.Strategy;
+const JWTStrategy = jwtStrategy.Strategy;
+const ExtractJWT = jwtStrategy.ExtractJwt;
 
 const initializePassport = () => {
   passport.use(
@@ -41,7 +45,32 @@ const initializePassport = () => {
       done(error);
     }
   });
+
+  passport.use(
+    "current",
+    new JWTStrategy(
+      {
+        jwtFromRequest: ExtractJWT.fromExtractors([cookieExtractor]),
+        secretOrKey: "merenguetengue",
+      },
+      async (payload, done) => {
+        try {
+          return done(null, payload);
+        } catch (error) {
+          return done(error);
+        }
+      }
+    )
+  );
 };
 
+function cookieExtractor(req) {
+  let token = null;
+  if (req && req.cookies) {
+    token = req.cookies["access-token"];
+  }
 
-export { initializePassport}
+  return token;
+}
+
+export { initializePassport };
