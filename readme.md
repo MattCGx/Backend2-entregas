@@ -19,7 +19,7 @@ Proyecto de API para ecommerce.
 - POST localhost:8080/api/auth/register (permite crear un usuario validando los campos ingresados)
 - POST localhost:8080/api/auth/login (permite iniciar una sesion de usuario con email y password)
 - GET localhost:8080/api/auth/current (valida al usuario con uso de la estrategia de jwt y devuelve datos)
-- 
+
 
 
 
