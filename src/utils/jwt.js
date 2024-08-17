@@ -1,10 +1,10 @@
 import jwt from "jsonwebtoken";
 
-const PRIVATE_KEY = "merenguetengue";
+const PRIVATE_KEY = process.env.JWT_SECRET;
 
 export function generateToken(payload) {
   return jwt.sign(payload, PRIVATE_KEY, {
-    expiresIn: "45m",
+    expiresIn: "15m",
   });
 }
 
