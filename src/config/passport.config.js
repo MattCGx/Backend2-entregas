@@ -47,7 +47,7 @@ const initializePassport = () => {
   });
 
   passport.use(
-    "current",
+    "jwt",
     new JWTStrategy(
       {
         jwtFromRequest: ExtractJWT.fromExtractors([cookieExtractor]),

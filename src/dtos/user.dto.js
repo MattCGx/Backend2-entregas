@@ -13,6 +13,7 @@ export const resUserDto = (user) => {
   const responseUserData = {
     email: user.email,
     role: user.role,
+    Carrito: user.cart,
   };
 
   return responseUserData;

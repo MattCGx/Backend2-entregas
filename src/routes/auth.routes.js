@@ -77,7 +77,7 @@ router.get("/login-error", (req, res) => {
     res.status(401).json({ error: "Credenciales incorrectas" });
 });
 
-router.get("/current", passport.authenticate("current", { session: false }), roleValidation(["user", "admin"]),(req, res) => {
+router.get("/current", passport.authenticate("jwt", { session: false }), roleValidation(['admin','user']),(req, res) => {
     res.status(200).json({ message: "bienvenido", user: resUserDto(req.user) });
   }
 );
