@@ -27,6 +27,6 @@ cartRouter.delete("/:cid/product/:pid", passport.authenticate("jwt",{session: fa
 
 cartRouter.delete("/:cid", passport.authenticate("jwt",{session: false}), roleValidation(['user']), cartController.clearCart);
 
-cartRouter.get('/:cid/purchase',passport.authenticate("jwt",{session: false}), authorizationRole(['user']), cartController.purchase)
+cartRouter.get('/:cid/purchase',passport.authenticate("jwt",{session: false}), roleValidation(['user']), cartController.purchase)
 
 export default cartRouter;

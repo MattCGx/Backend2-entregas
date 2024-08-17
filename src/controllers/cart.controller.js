@@ -1,5 +1,5 @@
 import * as service from '../services/cart.services.js'
-import { getProductById, updateProduct } from '../services/product.service.js';
+import { getProductById, updateProduct } from '../services/product.services.js';
 import { getUserByEmail } from '../services/user.services.js';
 import { createTicket } from '../services/ticket.services.js';
 import { resTicketDto } from '../dtos/ticket.dto.js';

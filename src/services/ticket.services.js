@@ -1,4 +1,4 @@
-import TicketDao from "../Daos/ticket.dao";
+import TicketDao from "../Daos/ticket.dao.js";
 
 const ticketDao = new TicketDao();
 
